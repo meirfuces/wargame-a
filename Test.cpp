@@ -5,6 +5,8 @@
 #include "DemoGame.hpp"
 #include "FootSoldier.hpp"
 #include "FootCommander.hpp"
+#include "Sniper.hpp"
+#include "SniperCommander.hpp"
 
 
 
@@ -34,7 +36,7 @@ namespace WarGame {
         board[{6, 1}] = new FootSoldier(1);
                 CHECK(board.has_soldiers(1));
                 CHECK(!board.has_soldiers(2));
-        for (int i = 0; i < 50; i++) {
+        for (int i = 0; i < 20; i++) {
                     CHECK(board.has_soldiers(2));
         }
     }
@@ -49,6 +51,37 @@ namespace WarGame {
                 CHECK(board.has_soldiers(1));
         for (int i = 0; i < 8; i++) {
             board[{i, i}] = new FootSoldier(1);
+                    CHECK(board.has_soldiers(1));
+                    CHECK(!board.has_soldiers(2));
+        }
+                CHECK(!board.has_soldiers(2));
+    }
+
+    TEST_CASE ("Sniper VS Sniper") {
+        WarGame::Board board(8, 8);
+                CHECK(!board.has_soldiers(1));
+        board[{3, 6}] = new FootSoldier(1);
+        CHECK_THROWS((board[{3, 6}] = new Sniper(1)));
+        board[{5, 3}] = new Sniper(1);
+        board[{6, 1}] = new Sniper(1);
+                CHECK(board.has_soldiers(1));
+        for (int i = 0; i < 8; i++) {
+            board[{i, i}] = new Sniper(1);
+                    CHECK(board.has_soldiers(1));
+                    CHECK(!board.has_soldiers(2));
+        }
+                CHECK(!board.has_soldiers(2));
+    }
+    TEST_CASE ("SniperCommander VS SniperCommander") {
+        WarGame::Board board(8, 8);
+                CHECK(!board.has_soldiers(1));
+        board[{3, 6}] = new FootSoldier(1);
+        CHECK_THROWS((board[{3, 6}] = new SniperCommander(1)));
+        board[{5, 3}] = new SniperCommander(1);
+        board[{6, 1}] = new SniperCommander(1);
+                CHECK(board.has_soldiers(1));
+        for (int i = 0; i < 8; i++) {
+            board[{i, i}] = new Sniper(1);
                     CHECK(board.has_soldiers(1));
                     CHECK(!board.has_soldiers(2));
         }
