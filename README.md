@@ -1,3 +1,7 @@
+![UMl](https://github.com/GintonD/wargame-a/blob/master/Untitled%20Diagram.jpg?raw=true)
+
+
+
 <div dir="rtl" lang="he">
 
 # משחק מלחמה - שלב א
