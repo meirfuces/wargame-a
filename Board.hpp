@@ -9,6 +9,8 @@
  */
 
 #include <string>
+#include <iostream>
+using namespace std;
 #include <vector>
 #include <stdexcept>
 #include "Soldier.hpp"
