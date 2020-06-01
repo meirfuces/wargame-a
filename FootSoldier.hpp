@@ -1,6 +1,6 @@
 #pragma once
 #include "Soldier.hpp"
-#include "cmath"
+
 #define DAMAGE 10
 namespace WarGame{
     class FootSoldier : public Soldier
@@ -10,6 +10,7 @@ namespace WarGame{
 
         void attack(std::vector<std::vector<Soldier*>> &board, std::pair<int,int> source)override {
             Soldier *enemy_to_attack = find_soldier_attack(board, source);
+            cout << "The life of enemy is " <<enemy_to_attack->hp<< endl;
             if (enemy_to_attack != nullptr) {
                 enemy_to_attack->hp -= DAMAGE;
 
@@ -19,6 +20,7 @@ namespace WarGame{
                     delete enemy_to_attack;
                     cout << "FootSoldier Attack and kill" << endl;// dead
                 }
+                else
                 cout << "FootSoldier Attack The life of enemy is " <<enemy_to_attack->hp<< endl; // alive
             }
             cout << "No Attack" << endl; // alive
@@ -52,10 +54,10 @@ namespace WarGame{
         void fillLife() override{
             this->hp = 100;
         }
-        ~FootSoldier()
-        {
-            delete this;
-        }
+//        ~FootSoldier()
+//        {
+//            delete this;
+//        }
     };
 
 }

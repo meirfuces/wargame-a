@@ -50,9 +50,9 @@ namespace WarGame {
         void fillLife() override{
             this->hp = 100;
         }
-        ~Sniper()
-        {
-            delete this;
-        }
+//        ~Sniper()
+//        {
+//            delete this;
+//        }
     };
 }
