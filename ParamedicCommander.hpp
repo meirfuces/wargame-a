@@ -6,7 +6,7 @@ namespace WarGame {
     class ParamedicCommander : public Soldier {
     class WarGame;
     public:
-        ParamedicCommander(int pn) : Soldier(200, pn, 100) {}
+        ParamedicCommander(int pn) : Soldier(200, pn) {}
         void attack(std::vector<std::vector<Soldier*>> &board, std::pair<int,int> source)override;/* {
         */
 

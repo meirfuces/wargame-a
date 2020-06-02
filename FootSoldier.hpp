@@ -6,7 +6,7 @@ namespace WarGame{
     class FootSoldier : public Soldier
             {
     public:
-        FootSoldier(int pn):Soldier(100,pn,10){}
+        FootSoldier(int pn):Soldier(100,pn){}
 
         void attack(std::vector<std::vector<Soldier*>> &board, std::pair<int,int> source)override {
             Soldier *enemy_to_attack = find_soldier_attack(board, source);

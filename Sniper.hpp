@@ -5,7 +5,7 @@ namespace WarGame {
     class Sniper : public WarGame::Soldier {
 
     public:
-        Sniper(int pn) : Soldier(120, pn, 100) {
+        Sniper(int pn) : Soldier(120, pn) {
         }
 
         //fuction Here
