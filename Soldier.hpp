@@ -1,5 +1,6 @@
 #pragma once
 #include <vector>
+#include "cmath"
 #include <iostream>
 using namespace std;
 namespace WarGame
@@ -12,9 +13,9 @@ namespace WarGame
         int dmg;
 
         Soldier(int hp, int p,int dmg): hp(hp), player(p) , dmg(dmg) {}
-        virtual void attack(vector<vector<Soldier*>> &board, pair<int,int> source)=0; //abstract function cant init
-        virtual void fillLife()=0;
-
+        virtual void attack(vector<vector<Soldier*>> &board, pair<int,int> source) = 0; //abstract function cant init
+        virtual void fillLife() = 0;
+        virtual ~Soldier(){}
         };
 
 }

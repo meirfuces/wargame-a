@@ -1,7 +1,8 @@
 //
 // Created by Ginton Durlacher on 24/05/2020.
 //
-
+//#include <iostream>
+//using namespace std;
 #include "Board.hpp"
 
 namespace WarGame
@@ -57,21 +58,22 @@ namespace WarGame
             case Up:
                 if(source.first+1>this->board.size())
                     throw std::invalid_argument("The move Up is out of bound");
-                //soldier->attack(board,source);
+                temp->attack(board,source);
+                cout<<"Move Up "<<endl;
                 board[source.first][source.second] = nullptr;
                 board[source.first+1][source.second] = temp;
                 break;
             case Down:
              if(   source.first-1<0)
                  throw std::invalid_argument("The move Down is out of bound");
-             //soldier->attack(board,source);
+                temp->attack(board,source);
              board[source.first][source.second] = nullptr;
                 board[source.first-1][source.second] = temp;
                 break;
             case Right:
                 if(source.second+1>this->board.size())
                     throw std::invalid_argument("The move Right is out of bound");
-                //soldier->attack(board,source);
+                temp->attack(board,source);
                 board[source.first][source.second] = nullptr;
 
                 board[source.first][source.second+1] = temp;
@@ -79,7 +81,7 @@ namespace WarGame
             case Left:
                 if(   source.second-1<0)
                     throw std::invalid_argument("The move Left is out of bound");
-                //soldier->attack(board,source);
+                temp->attack(board,source);
                 board[source.first][source.second] = nullptr;
 
                 board[source.first][source.second-1] = temp;

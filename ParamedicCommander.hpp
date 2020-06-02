@@ -16,9 +16,9 @@ namespace WarGame {
         void fillLife() override{
             this->hp = 200;
         }
-        ~ParamedicCommander()
-        {
-            delete this;
-        }
+//        ~ParamedicCommander()
+//        {
+//            delete this;
+//        }
     };
 }

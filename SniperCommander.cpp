@@ -1,7 +1,7 @@
 
-#include "SniperCommander.hpp"
+//#include "SniperCommander.hpp"
 
-void shoot()
+void attack()
 {
 
 }

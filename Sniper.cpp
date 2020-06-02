@@ -1,9 +1,8 @@
 //
 // Created by meir fuchs on 23/05/2020.
 //
-#include "Sniper.hpp"
+//#include "Sniper.hpp"
 
-void shoot1()
-{
+//virtual void attack(vector<vector<Soldier*>> &board, pair<int,int> source){
 
-}
+//}

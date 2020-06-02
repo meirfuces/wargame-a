@@ -15,10 +15,10 @@ namespace WarGame
         void fillLife() override{
             this->hp = 150;
         }
-        ~FootCommander()
-        {
-            delete this;
-        }
+//        ~FootCommander()
+//        {
+//            delete this;
+//        }
     };
 
 
