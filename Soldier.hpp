@@ -2,6 +2,7 @@
 #include <vector>
 #include "cmath"
 #include <iostream>
+#include <typeinfo>
 using namespace std;
 namespace WarGame
 {
@@ -14,7 +15,9 @@ namespace WarGame
         Soldier(int hp, int p): hp(hp), player(p)  {}
         virtual void attack(vector<vector<Soldier*>> &board, pair<int,int> source) = 0; //abstract function cant init
         virtual void fillLife() = 0;
-        virtual ~Soldier(){}
+        virtual ~Soldier(){
+            cout <<"remove"<<endl;
+        }
         };
 
 }

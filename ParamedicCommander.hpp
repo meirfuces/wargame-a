@@ -16,6 +16,9 @@ namespace WarGame {
         void fillLife() override{
             this->hp = 200;
         }
+        ~ParamedicCommander(){
+            cout <<"remove ParamedicCommander"<<endl;
+        }
 //        ~ParamedicCommander()
 //        {
 //            delete this;
