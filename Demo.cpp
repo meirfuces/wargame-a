@@ -10,8 +10,9 @@
 
 using namespace std;
 
+using namespace WarGame;
 int main() {
-	WarGame::DemoGame demoGame;
+DemoGame demoGame;
 	cout << "The winner is:\n " << demoGame.play() << endl;
     return 0;
 }
