@@ -25,9 +25,9 @@ void WarGame::FootCommander::attack(std::vector<std::vector<Soldier*>> &board, s
         enemy_to_attack->hp -= 20; //damage is 20 FootCommander
 
         if (enemy_to_attack->hp <= 0) {
-            //delete enemy_to_attack;
+//            delete enemy_to_attack;
 
-            delete enemy_to_attack;
+
             if (enemy_to_attack!=nullptr)
                 enemy_to_attack=nullptr;
             cout << "FootCommander Attack and kill" << endl;// dead
