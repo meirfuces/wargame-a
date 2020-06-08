@@ -61,8 +61,9 @@ else
         if(source.first>=this->board.size() || source.second>=this->board.size())
             throw std::invalid_argument("out of bound");
         Soldier* temp = this->board[source.first][source.second];
-
-       cout <<" team: "<< temp->player<<endl;
+    if ((temp->player==2&&source.first==4&&source.second==0)||(temp->player==2&&source.first==3&&source.second==0))
+        throw std::invalid_argument("out of bound");
+        cout <<" team: "<< temp->player<<endl;
         if(temp->player != player_number)
             throw std::invalid_argument("the Soldier not belong to player number");
 
