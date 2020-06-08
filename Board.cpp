@@ -94,7 +94,7 @@ else
                 board[source.first][source.second+1] = temp;
                 break;
             case Left:
-                if(   source.second-1=<0)
+                if(   source.second-1<=0)
                     throw std::invalid_argument("The move Left is out of bound");
                 temp->attack(board,source);
                 cout<<"Move Left "<<endl;
