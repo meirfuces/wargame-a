@@ -9,14 +9,15 @@ namespace WarGame
 {
     bool Board::has_soldiers(uint pn) const
     {
-        std::pair<int,int> p;
+        cout<<"check has soldier"<<endl;
+//        std::pair<int,int> p;
         for(int i = 0; i < board.size() ; i++)
         {
             for(int j = 0; j < board[i].size(); j++)
             {
-
-                p.first = i;
-                p.second = j;
+//
+//                p.first = i;
+//                p.second = j;
                 if(board[i][j]!=nullptr && board[i][j]->player==pn) return true;
             }
         }
@@ -49,15 +50,18 @@ else
     void Board::move(uint player_number, std::pair<int,int> source, MoveDIR direction)
     {
 
+        if (this->board[source.first][source.second]==nullptr)
+        {
+            cout<<"check place empty test"<<endl;
+            throw std::invalid_argument("place is empty meir test throw");
+
+        }
         if(source.first<0 || source.second<0)
             throw std::invalid_argument("0 invalid argument for the board");
-        if(source.first>this->board.size() || source.second>this->board.size())
+        if(source.first>=this->board.size() || source.second>=this->board.size())
             throw std::invalid_argument("out of bound");
         Soldier* temp = this->board[source.first][source.second];
-        if (temp==nullptr)
-        {
-            throw std::invalid_argument("place is empty");
-        }
+
        cout <<" team: "<< temp->player<<endl;
         if(temp->player != player_number)
             throw std::invalid_argument("the Soldier not belong to player number");
@@ -65,7 +69,7 @@ else
         switch (direction)
         {
             case Up:
-                if(source.first+1>this->board.size())
+                if(source.first+1>=this->board.size())
                     throw std::invalid_argument("The move Up is out of bound");
                 temp->attack(board,source);
                 cout<<"Move Up "<<endl;
