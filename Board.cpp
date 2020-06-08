@@ -77,7 +77,7 @@ else
                 board[source.first+1][source.second] = temp;
                 break;
             case Down:
-             if(   source.first-1<0)
+             if(   source.first-1<=0)
                  throw std::invalid_argument("The move Down is out of bound");
                 temp->attack(board,source);
                 cout<<"Move Down "<<endl;
@@ -85,7 +85,7 @@ else
                 board[source.first-1][source.second] = temp;
                 break;
             case Right:
-                if(source.second+1>this->board.size())
+                if(source.second+1>=this->board.size())
                     throw std::invalid_argument("The move Right is out of bound");
                 temp->attack(board,source);
                 cout<<"Move Right "<<endl;
@@ -94,7 +94,7 @@ else
                 board[source.first][source.second+1] = temp;
                 break;
             case Left:
-                if(   source.second-1<0)
+                if(   source.second-1=<0)
                     throw std::invalid_argument("The move Left is out of bound");
                 temp->attack(board,source);
                 cout<<"Move Left "<<endl;
